@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Testing Flask.">
+    <meta name="author" content="@adityamurthi">
+    <title>OPTiFly</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"-->
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+      body{
+        background: #f2f2f2;
+        font-family: 'Open Sans', sans-serif;
+        text-align: center;
+        margin: auto;
+        font-size: 17px;
+        padding: 10px;
+      }
+        
+    * {
+         box-sizing: border-box;
+      }
+
+    form.delay input[type=text] {
+          padding: 10px;
+          font-size: 17px;
+          border: 1px solid grey;
+          float: left;
+          width: 80%;
+          background: #f1f1f1;
+        }
+    
+    .boxed {
+        border: 2px solid blue;
+    }
+
+    .button {
+          float: center;
+          width: 10%;
+          padding: 10px 24px;
+          background-color:#03fc30;
+          border-color:black;
+          color: black;
+          font-size: 15px;
+          font-weight:bold;
+          border: 1px solid grey;
+          border-radius:10px;
+          border-left: none;
+          cursor: pointer;
+        }
+
+    .button:hover {
+          background: #0b7dda;
+        }
+
+      </style>
+</head>
+<div class=page>
+  <h1>OPTIFly</h1>
+  <div class="boxed">
+  <p>
+    <h4>
+      This application recommends the most <b>optimal time to fly</b> by 
+      incorporating customer preferences for whether they want to optimize on travel
+      time and/or cost (<i> not implemented yet </i>) as well as estimated delay 
+      time (if any) into the itinerary generation process.
+      <br \>
+    </h4>
+  </p>
+    <form id='delay' method='POST' action='fly'>
+        <label for="org">Origin:</label><br>
+        <input type="text" id="org" name="org"><br>
+        <br>
+        <label for="dest">Destination:</label><br>
+        <input type="text" id="dest" name="dest"><br>
+        <br>
+        <label for="date">Date:</label><br>
+        <input type="date" id="date" name="date" value="2019-07-01"
+         min="2019-01-01" max="2019-12-30"><br>
+        <br>
+        <label for="time">Preferred Departure Time:</label><br>
+        <select name="time" id="time">
+            <option value="any">Any</option>
+            <option value="morning">Morning</option>
+            <option value="after">Afternoon</option>
+            <option value="evening">Evening</option>
+      </select><br>
+      <br>
+      <label for="top">How many flight recommendations ?</label><br>
+      <input type="text" id="topn" name="topn"><br> 
+        <h4>Optimize On:</h4>
+            <input type="radio" id="time" value="time" name="opti" /> Travel Time
+            <input type="radio" id="cost" value="cost" name="opti" /> Travel Cost
+        <br><br>
+        <input type="submit" class="button" value="GoFly"><br>
+        </div>
+    </form>
+  </div>
+</div>
+</html>
+
+<!--body>
+<!--style="margin:auto;max-width:300px"-->
+
+    {{ script|safe }}
+    {{ div|safe }}
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.7.0/jquery.js"></script>
+    <!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></<script type="text/javascript"-->
+<!--/body-->
+</html>
